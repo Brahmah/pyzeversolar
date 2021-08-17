@@ -1,0 +1,6 @@
+pysaj.egg-info
+build
+dist
+.vscode
+pyzeversolar/__pycache__
+pyzeversolar/.vscode
