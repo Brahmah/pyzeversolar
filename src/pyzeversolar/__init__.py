@@ -23,14 +23,12 @@ MAPPER_STATES = {  # These states are copied directly from ZeverSolar maintainin
 
 URL_PATH_WIFI_INFO = "home.cgi"
 
-
 class Sensor(object):
     """Sensor definition"""
 
-    def __init__(self, key, dataIndex, factor, name, unit="", per_day_basis=False):
+    def __init__(self, key, dataIndex, name, unit="", per_day_basis=False):
         self.key = key
         self.dataIndex = dataIndex
-        self.factor = factor
         self.name = name
         self.unit = unit
         self.value = None
@@ -46,9 +44,9 @@ class Sensors(object):
         self.__s = []
         self.add(
             (
-                Sensor("pac", 10, "", "Current Power", "W"),
-                Sensor("e-today", 11, "/100", "Today Yeild", "kWh", True),
-                Sensor("Status", 7, "", "Status"),
+                Sensor("pac", 10, "Current Power", "W"),
+                Sensor("e-today", 11, "Today Yeild", "kWh", True),
+                Sensor("Status", 7, "Status"),
             )
         )
 
@@ -149,7 +147,7 @@ class ZSI:
                             if sen.name == "Status":
                                 sen.value = MAPPER_STATES.get(v, "Unknown")
                             else:
-                                sen.value = "{0}{1}".format(v, sen.factor)
+                                sen.value = v
                             sen.date = datetime.now()
                             sen.enabled = True
                             at_least_one_enabled = True
