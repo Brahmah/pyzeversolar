@@ -47,7 +47,7 @@ class Sensors(object):
         self.add(
             (
                 Sensor("pac", 10, "", "Current Power", "W"),
-                Sensor("e-today", 11, "/100", "Today Yeild", "kWh", "", True),
+                Sensor("e-today", 11, "/100", "Today Yeild", "kWh", True),
                 Sensor("Status", 7, "", "Status"),
             )
         )
