@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyzeversolar",
-    version="0.0.2",
+    version="0.0.3",
     author="brahmah",
     author_email="brahmah90@gmail.com",
     description="Library to communicate with ZeverSolar inverters",

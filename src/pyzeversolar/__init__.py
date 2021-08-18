@@ -46,9 +46,9 @@ class Sensors(object):
         self.__s = []
         self.add(
             (
-                Sensor("pac", 10, "", "current_power", "W"),
-                Sensor("e-today", 11, "/100", "today_yield", "kWh", True),
-                Sensor("state", 7, "", "state"),
+                Sensor("pac", 10, "", "Current Power", "W"),
+                Sensor("e-today", 11, "/100", "Today Yeild", "kWh", "", True),
+                Sensor("Status", 7, "", "Status"),
             )
         )
 
@@ -146,7 +146,7 @@ class ZSI:
                             v = None
 
                         if v is not None:
-                            if sen.name == "state":
+                            if sen.name == "Status":
                                 sen.value = MAPPER_STATES.get(v, "Unknown")
                             else:
                                 sen.value = "{0}{1}".format(v, sen.factor)
